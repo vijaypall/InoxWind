@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Avenir-book';
+    src: url('../fonts/AvenirLTPro-Book.woff2') format('woff2'),
+        url('../fonts/AvenirLTPro-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir-roman';
+    src: url('../fonts/AvenirLTPro-Heavy.woff2') format('woff2'),
+        url('../fonts/AvenirLTPro-Heavy.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir-roman-pro';
+    src: url('../fonts/AvenirLTPro-Roman.woff2') format('woff2'),
+        url('../fonts/AvenirLTPro-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir-mid';
+    src: url('../fonts/AvenirLTPro-Medium.woff2') format('woff2'),
+        url('../fonts/AvenirLTPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir-light';
+    src: url('../fonts/AvenirLTPro-Light.woff2') format('woff2'),
+        url('../fonts/AvenirLTPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir-black';
+    src: url('../fonts/AvenirLTPro-Black.woff2') format('woff2'),
+        url('../fonts/AvenirLTPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

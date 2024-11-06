@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97BF6ACB-505B-45F5-8672-79EC8F2D9B25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLogic</RootNamespace>
+    <AssemblyName>BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjectModel\Banner.cs" />
+    <Compile Include="BusinessObjectModel\Career.cs" />
+    <Compile Include="BusinessObjectModel\ContactEnquiry.cs" />
+    <Compile Include="BusinessObjectModel\DailyNews.cs" />
+    <Compile Include="BusinessObjectModel\HeaderImage.cs" />
+    <Compile Include="BusinessObjectModel\HtmlEditor.cs" />
+    <Compile Include="BusinessObjectModel\LatestNews.cs" />
+    <Compile Include="BusinessObjectModel\Leader.cs" />
+    <Compile Include="BusinessObjectModel\Login.cs" />
+    <Compile Include="BusinessObjectModel\Milestones.cs" />
+    <Compile Include="BusinessObjectModel\NewsRoom.cs" />
+    <Compile Include="BusinessObjectModel\Partner.cs" />
+    <Compile Include="BusinessObjectModel\Product.cs" />
+    <Compile Include="BusinessObjectModel\ProductImage.cs" />
+    <Compile Include="BusinessObjectModel\QualityCertificate.cs" />
+    <Compile Include="BusinessObjectModel\Search.cs" />
+    <Compile Include="BusinessObjectModel\User.cs" />
+    <Compile Include="BusinessObjectModel\WebsitePage.cs" />
+    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controller\BannersController.cs" />
+    <Compile Include="Controller\CareersController.cs" />
+    <Compile Include="Controller\ContactEnquiryController.cs" />
+    <Compile Include="Controller\DailyNewsController.cs" />
+    <Compile Include="Controller\HeaderImagesController.cs" />
+    <Compile Include="Controller\HtmlEditorController.cs" />
+    <Compile Include="Controller\LatestNewsController.cs" />
+    <Compile Include="Controller\LeaderController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MilestonesController.cs" />
+    <Compile Include="Controller\NewsRoomController.cs" />
+    <Compile Include="Controller\PartnerController.cs" />
+    <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Controller\ProductImageController.cs" />
+    <Compile Include="Controller\QualityCertificateController.cs" />
+    <Compile Include="Controller\SearchController.cs" />
+    <Compile Include="DataAccessLayer\Providers\AccountProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\BannerProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\CareerProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\ContactEnquiryProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\DailyNewsProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\DbProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\HeaderImageProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\HtmlEditorProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\LatestNewsProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\LeaderProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\LoginProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\MilestonesProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\NewsRoomProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\PartnerProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\ProductImageProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\ProductProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\QualityCertificateProvider.cs" />
+    <Compile Include="DataAccessLayer\Providers\SearchProvider.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLAccount.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLBanner.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLCareer.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLContactEnquiry.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLDailyNews.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLHeaderImage.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLHtmlEditor.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLLatestNews.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLLeader.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLLogin.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLMilestones.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLNewsRoom.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLPartner.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLProduct.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLProductImage.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLQualityCertificate.cs" />
+    <Compile Include="DataAccessLayer\SqlClient\SQLSearch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

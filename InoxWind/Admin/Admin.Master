@@ -1,0 +1,406 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="InoxWind.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Dashboard - Inox Wind Admin</title>
+
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- Datatable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap.css" />
+    <!-- page specific plugin styles -->
+
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="assets/css/daterangepicker.min.css" />
+
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+
+        #dt-length-0 option[value="100"] {
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<%--<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>--%>
+<body class="skin-1">
+    <div id="navbar" class="navbar navbar-default          ace-save-state">
+        <div class="navbar-container ace-save-state" id="navbar-container">
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-header pull-left">
+                <a href="Default.aspx" class="navbar-brand">
+                    <small>Admin | Dashboard
+                    </small>
+                </a>
+            </div>
+
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+
+                    <li class="light-blue dropdown-modal">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                Vijaypall1993@gmail.com
+                            </span>
+
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <%--<li>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-cog"></i>
+                                    Settings
+                                </a>
+                            </li>
+                                --%>
+                            <li>
+                                <a href="profile.html">
+                                    <i class="ace-icon fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <a href="Login.aspx">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-container -->
+    </div>
+
+    <div class="main-container ace-save-state" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.loadState('main-container') } catch (e) { }
+        </script>
+
+        <div id="sidebar" class="sidebar responsive ace-save-state">
+            <script type="text/javascript">
+                try { ace.settings.loadState('sidebar') } catch (e) { }
+            </script>
+
+            <ul class="nav nav-list">
+                <li class="active">
+                    <a href="Default.aspx">
+                        <i class="menu-icon fa fa-tachometer"></i>
+                        <span class="menu-text">Dashboard </span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li id="WebsiteHome">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tag"></i>
+                        <span class="menu-text">Website Home</span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li id="Banner">
+                            <a href="Banner.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Banner
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="" id="Editor">
+                            <a href="HtmlEditor.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Editor
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="" id="Milestones">
+                            <a href="Milestones.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Milestones
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <li class="" id="Partners">
+                    <a href="/Admin/Partners.aspx">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text">Partner</span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li class="" id="QualityCertificate">
+                    <a href="/Admin/QualityCertificate.aspx">
+                        <i class="menu-icon fa fa-pencil-square-o"></i>
+                        <span class="menu-text">Quality Certificate </span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li id="NewRoomUI">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tag"></i>
+                        <span class="menu-text">News Room</span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+
+                    <ul class="submenu">
+                        <li id="Newsli">
+                            <a href="/Admin/News.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                News
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="" id="LatestNews">
+                            <a href="LatestNews.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Latest News
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="" id="DailyNews">
+                            <a href="DailyNews.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Daily News
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+                <li class="" id="ContactEnquiry">
+                    <a href="ContactEnquiry.aspx">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text">Contact Enquiry</span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li class="" id="Leader">
+                    <a href="Leader.aspx">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text">Leader</span>
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li id="Product">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tag"></i>
+                        <span class="menu-text">Product</span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a> 
+                    <b class="arrow"></b> 
+                    <ul class="submenu">
+                        <li id="ProductImage">
+                            <a href="ProductImage.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Product Image
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="" id="ProductData">
+                            <a href="ProductData.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Product Data
+                            </a>
+                            <b class="arrow"></b>
+                        </li> 
+                    </ul>
+                </li>
+                    <li id="career">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-tag"></i>
+                        <span class="menu-text">career</span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a> 
+                    <b class="arrow"></b> 
+                    <ul class="submenu">
+                        <li id="Opening">
+                            <a href="Opening.aspx">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Opening
+                            </a>
+                            <b class="arrow"></b>
+                        </li> 
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.nav-list -->
+
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+        </div>
+
+        <div class="main-content">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+        <!-- /.main-content -->
+
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span class="bigger-120">Admin | Dashboard &copy; 2024
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div>
+    <!-- /.main-container -->
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/buttons.flash.min.js"></script>
+    <script src="assets/js/buttons.html5.min.js"></script>
+    <script src="assets/js/buttons.print.min.js"></script>
+    <script src="assets/js/buttons.colVis.min.js"></script>
+
+
+    <script src="assets/js/jquery-ui.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="assets/js/jquery.easypiechart.min.js"></script>
+    <script src="assets/js/jquery.sparkline.index.min.js"></script>
+    <script src="assets/js/jquery.flot.min.js"></script>
+    <script src="assets/js/jquery.flot.pie.min.js"></script>
+    <script src="assets/js/jquery.flot.resize.min.js"></script>
+
+
+    <script src="assets/js/jquery-ui.custom.min.js"></script>
+    <script src="assets/js/chosen.jquery.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/daterangepicker.min.js"></script>
+    <script src="assets/js/autosize.min.js"></script>
+    <script src="assets/js/jquery.inputlimiter.min.js"></script>
+    <script src="assets/js/jquery.maskedinput.min.js"></script>
+    <!-- ace scripts -->
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+
+    <!-- inline scripts related to this page -->
+
+
+    <!-- Datatable -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+        new DataTable('#example');
+    </script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            })
+                //show datepicker when clicking on the icon
+                .next().on(ace.click_event, function () {
+                    $(this).prev().focus();
+                });
+
+            //or change it into a date range picker
+            $('.input-daterange').datepicker({ autoclose: true });
+
+
+            //to translate the daterange picker, please copy the "examples/daterange-fr.js" contents here before initialization
+            $('input[name=date-range-picker]').daterangepicker({
+                'applyClass': 'btn-sm btn-success',
+                'cancelClass': 'btn-sm btn-default',
+                locale: {
+                    applyLabel: 'Apply',
+                    cancelLabel: 'Cancel',
+                }
+            })
+                .prev().on(ace.click_event, function () {
+                    $(this).next().focus();
+                });
+
+
+            $('#timepicker1').timepicker({
+                minuteStep: 1,
+                showSeconds: true,
+                showMeridian: false,
+                disableFocus: true,
+                icons: {
+                    up: 'fa fa-chevron-up',
+                    down: 'fa fa-chevron-down'
+                }
+            }).on('focus', function () {
+                $('#timepicker1').timepicker('showWidget');
+            }).next().on(ace.click_event, function () {
+                $(this).prev().focus();
+            });
+
+        });
+    </script>
+</body>
+</html>

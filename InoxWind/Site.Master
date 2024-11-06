@@ -1,0 +1,450 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InoxWind.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inoxwind</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body>
+    <nav>
+        <div class="container-fluid top-nav">
+            <div class="top-flex w90 margin-center">
+                <div class="logo-side-box">
+                    <a href="Default.aspx" title="Home" class="logo-side">
+                        <img class="logo-1" src="assets/images/logo-1.png" alt="logo" />
+                        <img class="logo-2" src="assets/images/logo-2.png" alt="logo" />
+                    </a>
+                </div>
+                <div class="top-nav-btns">
+                    <a href="#" class="button-main">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Login</span>
+                    </a>
+                    <%-- <div class="search-nav">
+                        <label class="expandSearch" style="position:relative"> 
+                            <input type="text"  ID="txtdsearch" placeholder="Search..." name="search"/>
+                            <input Text="btn" name="btn" type="button" id="btnSerach"  />
+                           <i class="bi bi-search"></i>
+                        </label>
+
+                    </div> --%>
+                    <div class="search-nav">
+                        <input type="text" name="name" id="txtsearh" value="" placeholder="Search..." onkeypress="handleKeyPress(event)" style="border-radius: 30px; border: solid 1px #ccc; padding: 6px;" />
+                        <button style="border: none; background: none" id="btnSearch"><i class="bi bi-search"></i></button>
+                        <%--   <asp:Button ID="btnSearch" runat="server" CssClass="icon-button"  
+                        Text="<i class='bi bi-search'></i>" UseSubmitBehavior="false" />--%>
+                    </div>
+                    <div class="search-nav menubar pc_hide">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M2.99951 5.99951H21M2.99951 11.9997H21M2.99951 17.9998H21" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bottom-nav">
+            <div class="black-area"></div>
+            <div class="close-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="16" fill="#FAFAFA" />
+                    <path d="M22 10L9.99995 22M9.99995 10L22 22" stroke="black" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <ul>
+                <li>
+                    <p class="header-link">About</p>
+                    <div class="dropdown">
+                        <div class="back-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+                                <polyline points="15 18 9 12 15 6"></polyline></svg>
+                            Back
+                        </div>
+                        <ul>
+                            <li>
+                                <p>About INOXWIND</p>
+                            </li>
+                            <li>
+                                <a href="AboutInoxgfl.aspx" title="About INOXGFL">About INOXGFL
+                                </a>
+                            </li>
+                            <li>
+                                <a href="AboutInox.aspx" title="About INOXWIND">About INOXWIND
+                                </a>
+                            </li>
+                            <li>
+                                <a href="leadership.aspx" title="Our Leaders">Our Leaders
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#" title="Our Certifications">
+                                    Our Certifications
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="technology-partner.aspx" title="Technology Partner">Technology Partner
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manufacturing-facilities.aspx" title="Manufacturing facilities">Manufacturing facilities
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Partners.aspx" title="Our Partners">Our Partners
+                                </a>
+                            </li>
+                            <li>
+                                <a href="QualityPolicy.aspx" title="Policies">Quality Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="products.aspx" title="Products">Products</a>
+                </li>
+                <li>
+                    <p class="header-link">Services</p>
+                    <div class="dropdown">
+                        <div class="back-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+                                <polyline points="15 18 9 12 15 6"></polyline></svg>
+                            Back
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Our Services</p>
+                            </li>
+                            <li>
+                                <a href="infrastructure.aspx" title="Infrastructure">Infrastructure
+                                </a>
+                            </li>
+                            <li>
+                                <a href="operations.aspx" title="Operations">Operations
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="investors.aspx" title="Investors">Investors</a>
+                </li>
+                <li>
+                    <a href="Career.aspx" title="Career">Career</a>
+                </li>
+                <li>
+                    <p class="header-link">Newsroom</p>
+                    <div class="dropdown">
+                        <div class="back-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+                                <polyline points="15 18 9 12 15 6"></polyline></svg>
+                            Back
+                        </div>
+                        <ul>
+                            <li>
+                                <p>Newsroom</p>
+                            </li>
+                            <li>
+                                <a href="press-release.aspx" title="Press Release">Press Release
+                                </a>
+                            </li>
+                            <li>
+                                <a href="media-coverage.aspx" title="Media Coverage">Media Coverage
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="ContactUs.aspx" title="Contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <%--    <form id="form1" runat="server">--%>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <%--</form>--%>
+
+    <footer>
+        <div class="footer-top mcontainer">
+            <div class="w90 margin-center footer-flex">
+                <div class="footbox-f footer-box">
+                    <div class="footer-box footer-parabx">
+                        <div class="foot-logo">
+                            <a href="Default.aspx" title="Home" class="footer-logo">
+                                <img src="assets/images/logo-1.png" alt="" />
+                            </a>
+                        </div>
+                        <p>
+                            Inox Wind is India’s leading wind energy solutions provider servicing IPPs, Utilities, PSUs, Corporates and Retail Investors.
+                        </p>
+                    </div>
+                    <div class="footer-subscribe">
+                        <h4>Let’s stay in touch</h4>
+                        <form>
+                            <div class="footer-form">
+                                <input type="email" placeholder="Enter email address *" name="email" />
+                                <button>Join</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="footer-subscribe">
+                        <h4>Download E-Brochure</h4>
+                        <form>
+                            <div class="footer-form">
+                                <input type="email" placeholder="Enter email address *" name="email" />
+                                <button>Download</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>
+                            <a href="AboutInox.aspx" title="About">About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.aspx" title="Products">Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="infrastructure.aspx" title="Services">Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="investors.aspx" title="Investors">Investors
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Career.aspx" title="Career">Career
+                            </a>
+                        </li>
+                        <li>
+                            <a href="press-release.aspx" title="Newsroom">Newsroom
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ContactUs.aspx" title="Contact">Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h4>Site Links</h4>
+                    <ul>
+                        <li>
+                            <a href="privacy-policy.aspx" title="Privacy Policy">Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="legal-disclaimer.aspx" title="Disclaimer">Disclaimer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Sitemap">Sitemap
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="SGC (HR-Portal for Employees)">SGC (HR-Portal for Employees)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Webmail">Webmail
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="WindKraft DGR">WindKraft DGR
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footbox-f footer-box">
+                    <div class="footer-box">
+                        <h4>Address</h4>
+                        <p>
+                            Inox Towers, Plot No. 17, Sector 16-A, Noida-201 301, Uttar Pradesh, India
+                        </p>
+                    </div>
+                    <div class="footer-box">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li>
+                                <a href="tel:+91206149600" title="Call Us">+91 120 6149 600
+                                </a>
+                            </li>
+                            <li>
+                                <p>
+                                    Fax: +91 120 6149 610
+                                </p>
+                            </li>
+                            <li>
+                                <a href="mailto:enquiry@inoxwind.com" title="Mail Us">enquiry@inoxwind.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright mcontainer">
+            <div class="w90 margin-center foot-bot-flex">
+                <p>Copyright © 2024 | All rights reserved</p>
+                <ul>
+                    <li>
+                        <a href="#" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M23 3.00005C22.0424 3.67552 20.9821 4.19216 19.86 4.53005C19.2577 3.83756 18.4573 3.34674 17.567 3.12397C16.6767 2.90121 15.7395 2.95724 14.8821 3.2845C14.0247 3.61176 13.2884 4.19445 12.773 4.95376C12.2575 5.71308 11.9877 6.61238 12 7.53005V8.53005C10.2426 8.57561 8.50127 8.18586 6.93101 7.39549C5.36074 6.60513 4.01032 5.43868 3 4.00005C3 4.00005 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.50005C20.9991 7.2215 20.9723 6.94364 20.92 6.67005C21.9406 5.66354 22.6608 4.39276 23 3.00005Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22.5401 6.42C22.4213 5.94541 22.1794 5.51057 21.8387 5.15941C21.4981 4.80824 21.0708 4.55318 20.6001 4.42C18.8801 4 12.0001 4 12.0001 4C12.0001 4 5.12008 4 3.40008 4.46C2.92933 4.59318 2.50206 4.84824 2.16143 5.19941C1.8208 5.55057 1.57887 5.98541 1.46008 6.46C1.1453 8.20556 0.991319 9.97631 1.00008 11.75C0.988863 13.537 1.14285 15.3213 1.46008 17.08C1.59104 17.5398 1.83839 17.9581 2.17823 18.2945C2.51806 18.6308 2.9389 18.8738 3.40008 19C5.12008 19.46 12.0001 19.46 12.0001 19.46C12.0001 19.46 18.8801 19.46 20.6001 19C21.0708 18.8668 21.4981 18.6118 21.8387 18.2606C22.1794 17.9094 22.4213 17.4746 22.5401 17C22.8524 15.2676 23.0064 13.5103 23.0001 11.75C23.0113 9.96295 22.8573 8.1787 22.5401 6.42Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.47998V15.02Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6 9H2V21H6V9Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/global.js"></script>
+
+    <script>
+        feather.replace();
+        var bannerSwiper = new Swiper('.banner-swiper', {
+            slidesPerView: 1,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: '.banner-next',
+                prevEl: '.banner-prev',
+            }
+        })
+        var newsSwiper = new Swiper(".news-slider", {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: ".news-next",
+                prevEl: ".news-prev",
+            },
+        });
+        var valuesSwiper = new Swiper(".values-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 16,
+                    centeredSlides: true,
+                },
+                480: {
+                    slidesPerView: 2,
+                    centeredSlides: false,
+                },
+                772: {
+                    slidesPerView: 3,
+                },
+                991: {
+                    slidesPerView: 4,
+                }
+            },
+            navigation: {
+                nextEl: ".value-next",
+                prevEl: ".value-prev",
+            },
+        });
+    </script>
+    <script>
+        function CallAjax(searchtext) {
+            var __RequestVerificationToken = "Test";
+            var url = '/WebService.asmx/WebsiteSearchresult'; //$('#csrfToken').attr('data-href-url');
+            $.ajax({
+                type: "POST",
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ searchtext: searchtext, __RequestVerificationToken: __RequestVerificationToken }),
+                success: function (response) {
+                    debugger;
+                    if (response.d == "success") {
+                        window.location.href = 'SearchResult.aspx';
+                    } else {
+                        alert(response.d);
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while trying to delete the item.");
+                }
+            });
+        }
+        $(document).ready(function () {
+            $("#btnSearch").click(function () {
+                debugger;
+                if ($("#txtsearh").val() == "") {
+                    alert('enter search text');
+                    $(this).focus();
+                    return false;
+                } else {
+                    CallAjax($("#txtsearh").val())
+
+                }
+            });
+        });
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                if ($("#txtsearh").val() == "") {
+                    alert('enter search text');
+                    $(this).focus();
+                    return false;
+                } else {
+                    CallAjax($("#txtsearh").val())
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>
